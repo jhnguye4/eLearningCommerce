@@ -1,0 +1,11 @@
+<h1>Editing Student</h1>
+
+<% if current_user.type == "Admin" || current_user.id == @student.id %>
+  <%= render 'form', student: @student %>
+
+  <%= link_to 'Show', @student %> |
+  <%= link_to 'Home', welcome_path %>
+<% else %>
+  <h4>You do not have permission to view this page</h4>
+  <%= link_to 'Home', welcome_path %>
+<% end %>

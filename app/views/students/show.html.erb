@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<ul>
+  <li>
+    <strong>Name:</strong>
+    <%= @student.name %>
+  </li>
+  <li>
+    <strong>Email:</strong>
+    <%= @student.email %>
+  </li>
+  <li>
+    <strong>Phone Number:</strong>
+    <%= @student.phone_num %>
+  </li>
+  <li>
+    <strong>Address:</strong>
+    <%= @student.addr %>
+  </li>
+  <li>
+    <strong>Major:</strong>
+    <%= @student.major %>
+  </li>
+
+</ul>
+<% if current_user.type == "Admin" || current_user.id == @student.id %>
+  <%= link_to 'Edit', edit_student_path(@student) %> |
+<% end %>
+<%= link_to 'Home', welcome_path %>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<h1>Hi, <%= @user.name %></h1>
+<p>
+  Here are the classes you are registered to.
+  <br>
+  <% @courses_in_carts.each do |courses_in_cart| %>
+  <div style="display:none;visible:hidden">
+    <%= course = Course.find_by(id: courses_in_cart.course_id)%>
+  </div>
+  <tr>
+    <td><%= course.number %></td>
+    <td><%= course.name %></td>
+    <td><%= course.price %></td>
+  </tr>
+<% end %>
+
+</p>
+<p>Thanks for registering and have a great day!</p>
+</body>
+</html>

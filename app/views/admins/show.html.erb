@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<ul>
+  <li>
+    <strong>Name:</strong>
+    <%= @admin.name %>
+  </li>
+  <li>
+    <strong>Email:</strong>
+    <%= @admin.email %>
+  </li>
+  <li>
+    <strong>Password:</strong>
+    <%= @admin.password %>
+  </li>
+  <li>
+    <strong>Phone Number:</strong>
+    <%= @admin.phone_num %>
+  </li>
+  <li>
+    <strong>Address:</strong>
+    <%= @admin.addr %>
+  </li>
+</ul>
+<% if current_user.type == "Admin" %>
+   <%= link_to 'Edit', edit_admin_path(@admin) %> |
+<% end %>
+<%= link_to 'Back', admins_path %>

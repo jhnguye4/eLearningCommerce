@@ -1,0 +1,42 @@
+<h2>Welcome</h2>
+<p id="notice"><%= notice %></p>
+<% if logged_in? %>
+  <h3>You are Logged In, <%= current_user.name %></h3>
+
+  <%= button_to "View Available Courses", '/courses', method: :get %>
+  <%= button_to "My Courses", '/enrolled', method: :get %>
+  <% if current_user.type == "Student" || current_user.type == "Admin" %>
+    <%= button_to "Go to Cart", courses_in_carts_url, method: :get %>
+  <% end %>
+  <% if current_user.type == "Student" %>
+    <%= button_to "View my Profile", student_path(current_user), method: :get %>
+    <%= button_to "Edit my Profile", edit_student_path(current_user), method: :get %>
+  <% end %>
+
+  <% if current_user.type == "Teacher" || current_user.type == "Admin" %>
+    <%= button_to "Show Reviews", '/reviews', method: :get %>
+  <% end %>
+  <% if current_user.type == "Teacher" %>
+    <%= button_to "View my Profile", teacher_path(current_user), method: :get %>
+    <%= button_to "Edit my Profile", edit_teacher_path(current_user), method: :get %>
+    <%= button_to "Show my Students", '/students', method: :get %>
+  <% end %>
+
+  <% if current_user.type == "Admin" %>
+    <br>
+    <%= button_to "Show all Users", '/users', method: :get %>
+    <%= button_to "Show all Students", '/students', method: :get %>
+    <%= button_to "Show all Teachers", '/teachers', method: :get %>
+    <br>
+    <%= button_to "View my Profile", admin_path(current_user), method: :get %>
+    <%= button_to "Edit my Profile", edit_admin_path(current_user), method: :get %>
+  <% end %>
+  <br>
+  <%= button_to "Sign Out", '/logout', method: :delete %>
+
+<% else %>
+  <%= button_to "Login", '/login', method: :get %>
+  <%= button_to "Sign Up", '/users/new', method: :get %>
+<% end %>
+
+

@@ -1,0 +1,2 @@
+module CoursesInCartsHelper
+end

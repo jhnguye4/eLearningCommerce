@@ -1,0 +1,11 @@
+<h1>Editing Admin</h1>
+
+<% if current_user.type == "Admin" %>
+  <%= render 'form', admin: @admin %>
+
+  <%= link_to 'Show', @admin %> |
+  <%= link_to 'Back', admins_path %>
+<% else %>
+  <h4>You do not have permission to view this page</h4>
+  <%= link_to 'Home', welcome_path %>
+<% end %>

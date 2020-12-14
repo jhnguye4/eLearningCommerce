@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Students</h1>
+
+<% if current_user.type == "Admin" || current_user.type == "Teacher" %>
+  <table>
+    <thead>
+    <tr>
+      <th>Course Number</th>
+      <th>Course Name</th>
+      <th>Student Name</th>
+      <th>Major</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Address</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @students.each do |student| %>
+      <% if current_user.type == "Teacher" %>
+        <% @courses.each do |course| %>
+          <% if course.ts_hash[current_user.id] && course.ts_hash[current_user.id].include?(student.id) %>
+            <tr>
+              <td><%= course.number %></td>
+              <td><%= course.name %></td>
+              <td><%= student.name %></td>
+              <td><%= student.major %></td>
+              <td><%= student.email %></td>
+              <td><%= student.phone_num %></td>
+              <td><%= student.addr %></td>
+              <td><%= link_to 'Show', student %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      <% end %>
+
+      <% if current_user.type == "Admin" %>
+        <% @courses.each do |course| %>
+          <% if course.students && course.students.include?(student.id.to_s) %>
+            <tr>
+              <td><%= course.number %></td>
+              <td><%= course.name %></td>
+              <td><%= student.name %></td>
+              <td><%= student.major %></td>
+              <td><%= student.email %></td>
+              <td><%= student.phone_num %></td>
+              <td><%= student.addr %></td>
+              <td><%= link_to 'Show', student %></td>
+              <td><%= link_to 'Edit', edit_student_path(student) %></td>
+              <td><%= link_to 'Delete', student, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      <% end %>
+
+    <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <% if current_user.type == "Admin" %>
+    <%= link_to 'New Student', new_student_path %> |
+  <% end %>
+  <%= link_to 'Home', welcome_url %>
+<% else %>
+  <h4>You do not have permission to view this page</h4>
+  <%= link_to 'Home', welcome_url %>
+<% end %>

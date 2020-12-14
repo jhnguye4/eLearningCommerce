@@ -1,0 +1,55 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <% if current_user %>
+    <% if (current_user.type == 'Admin' && (user.type == 'Student' || user.type == 'Teacher')) || (current_user.id == user.id && current_user.type != 'Admin') %>
+      <div class="field">
+        <%= form.label :email %>
+        <%= form.text_field :email %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :phone_num %>
+    <%= form.text_field :phone_num %>
+  </div>
+
+  <div class="field">
+    <%= form.label :addr %>
+    <%= form.text_field :addr %>
+  </div>
+
+  <% if current_user %>
+    <% if (current_user.type == 'Admin' && (user.type == 'Student' || user.type == 'Teacher')) || (current_user.id == user.id && current_user.type != 'Admin') %>
+      <div class="field">
+        <%= form.label :password %>
+        <%= form.text_field :password %>
+      </div>
+    <% else %>
+      <div class="field" style="display:none;visible:hidden">
+        <%= form.label :password %>
+        <%= form.text_field :password, :value => 'password'%>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

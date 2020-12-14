@@ -1,0 +1,110 @@
+---
+user_1:
+  id: 1
+  name: Admin
+  email: Admin
+  phone_num: '123'
+  addr: 123 Admin Ln.
+  created_at: '2020-09-12 20:08:04.382871'
+  updated_at: '2020-09-12 20:08:04.382871'
+  discipline:
+  major:
+  credit_card_name:
+  credit_card_number:
+  credit_card_expiration_date:
+  credit_card_3_digit_cvv:
+  password:
+  type: Admin
+  password_digest: "$2a$12$DewKaHFe9QEtC8k40m4rJez79Tt.PZ13G95K3WbiyEKGt65HaGQNS"
+  cart_id:
+user_2:
+  id: 2
+  name: Dr. G
+  email: efg
+  phone_num: '123'
+  addr: 123 EFG Ln.
+  created_at: '2020-09-12 20:08:04.753609'
+  updated_at: '2020-09-12 20:08:04.753609'
+  discipline: CSC
+  major:
+  credit_card_name:
+  credit_card_number:
+  credit_card_expiration_date:
+  credit_card_3_digit_cvv:
+  password:
+  type: Teacher
+  password_digest: "$2a$12$sOZ2iJMjIcA4DCnfBqjXDOQDXuNPpo7F2IWw1LMKstbbyXubIzQ9G"
+  cart_id:
+user_3:
+  id: 3
+  name: Dr. H
+  email: heckman
+  phone_num: '123'
+  addr: 123 Heckman Ln.
+  created_at: '2020-09-12 20:08:05.097529'
+  updated_at: '2020-09-12 20:08:05.097529'
+  discipline: CSC
+  major:
+  credit_card_name:
+  credit_card_number:
+  credit_card_expiration_date:
+  credit_card_3_digit_cvv:
+  password:
+  type: Teacher
+  password_digest: "$2a$12$YT5H.AFywQRQkDbnsyvVMOhUnGOUqTuQFV6byVmJ0l4WOEigdK9WW"
+  cart_id:
+user_4:
+  id: 4
+  name: Dr. S
+  email: smith
+  phone_num: '123'
+  addr: 123 Smith Ln.
+  created_at: '2020-09-12 20:08:05.450831'
+  updated_at: '2020-09-12 20:08:05.450831'
+  discipline: MAE
+  major:
+  credit_card_name:
+  credit_card_number:
+  credit_card_expiration_date:
+  credit_card_3_digit_cvv:
+  password:
+  type: Teacher
+  password_digest: "$2a$12$e/fjTWhVwEqW9EcRY55GR.iHNcFSxbWfm35hj7lT9KcGK7zG2ANCO"
+  cart_id:
+user_5:
+  id: 5
+  name: Justin
+  email: Justin
+  phone_num: '1'
+  addr: '1'
+  created_at: '2020-09-12 20:09:48.066552'
+  updated_at: '2020-09-12 20:10:06.000158'
+  discipline:
+  major: CSC
+  credit_card_name: '1'
+  credit_card_number: '1'
+  credit_card_expiration_date: '1'
+  credit_card_3_digit_cvv: '1'
+  password:
+  type: Student
+  password_digest: "$2a$12$IVdDKVkk0DWZNvhBKVsih.Bdx4QoZQibzzllLCgweNVHasqNgO216"
+  cart_id:
+
+user_6:
+  id: 6
+  name: Justin
+  email: jkirsch@ncsu.edu
+  phone_num: '1'
+  addr: '1'
+  created_at: '2020-09-12 20:09:48.066552'
+  updated_at: '2020-09-12 20:10:06.000158'
+  discipline:
+  major: CSC
+  credit_card_name: '1'
+  credit_card_number: '1'
+  credit_card_expiration_date: '1'
+  credit_card_3_digit_cvv: '1'
+  password:
+  type: Student
+  password_digest: "$2a$12$IVdDKVkk0DWZNvhBKVsih.Bdx4QoZQibzzllLCgweNVHasqNgO216"
+  cart_id:

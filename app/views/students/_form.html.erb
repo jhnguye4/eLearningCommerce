@@ -1,0 +1,61 @@
+<%= form_with(model: student, local: true) do |form| %>
+  <% if student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+        <% student.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone_num %>
+    <%= form.text_field :phone_num %>
+  </div>
+
+  <div class="field">
+    <%= form.label :addr %>
+    <%= form.text_field :addr %>
+  </div>
+  <div class="field">
+    <%= form.label :major %>
+    <%= form.text_field :major %>
+  </div>
+  <div class="field">
+    <%= form.label :credit_card_name%>
+    <%= form.text_field :credit_card_name%>
+  </div>
+  <div class="field">
+    <%= form.label :credit_card_number%>
+    <%= form.text_field :credit_card_number %>
+  </div>
+  <div class="field">
+    <%= form.label :credit_card_expiration_date%>
+    <%= form.text_field :credit_card_expiration_date %>
+  </div>
+  <div class="field">
+    <%= form.label :credit_card_3_digit_cvv%>
+    <%= form.text_field :credit_card_3_digit_cvv %>
+  </div>
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

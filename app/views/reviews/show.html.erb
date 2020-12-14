@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Teacher:</strong>
+  <%= Teacher.find(@review.teacher_id).name %>
+</p>
+
+<p>
+  <strong>Review:</strong>
+  <%= @review.review %>
+</p>
+
+<%= link_to 'Home', welcome_path %>

@@ -1,0 +1,13 @@
+---
+review_6:
+  id: 6
+  teacher_id: 2
+  review: review and teacher id passed this time
+  created_at: '2020-09-12 22:11:47.488491'
+  updated_at: '2020-09-12 22:11:47.488491'
+review_7:
+  id: 7
+  teacher_id: 3
+  review: heck review
+  created_at: '2020-09-12 22:28:41.304514'
+  updated_at: '2020-09-12 22:28:41.304514'
